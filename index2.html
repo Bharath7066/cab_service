@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KLR Cab service</title>
+ <!-- <link rel="stylesheet" href="style.css" />-->
+    <link rel="stylesheet" href="style4.css" />
+  <!--<link rel="stylesheet" href="style3.css" />-->
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("8k1KpIBEiNRTTrTd2"); //  Your real public key
+    })();
+  </script>
+</head>
+<body>
+ <nav class="navbar">
+  <h1 class="logo" style="color: white;">KLR Cab service</h1>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#booking">Book Now</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+
+
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2 >Reliable Car Cab Service</h2>
+      <p>Book a ride anytime, anywhere with ease</p>
+      <a href="#booking" class="btn" >Book a Cab</a>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-boxes">
+      <div class="box">
+        <h3>City Rides</h3>
+        <p>Fast and affordable cab rides within the city.</p>
+      </div>
+      <div class="box">
+        <h3>Outstation Trips</h3>
+        <p>Plan your road trips with our trusted cab service.</p>
+      </div>
+      <div class="box">
+        <h3>Airport Transfers</h3>
+        <p>Timely pickups and drops for your flights.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking" class="booking">
+    <h2>Book a Cab</h2>
+    <form id="booking-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="tel" name="phone" placeholder="Mobile Number" required />
+      <input type="text" name="pickup" placeholder="Pickup Location" required />
+      <input type="text" name="drop" placeholder="Drop Location" required />
+      <input type="datetime-local" name="datetime" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <button type="submit">Book Now</button>
+    </form>
+    <p id="confirmation" style="color: green; margin-top: 1rem;"></p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: klrcabservice2025@gmail.com | Phone: +91 9398981293</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 KLR Cab service. All rights reserved.</p>
+  </footer>
+
+  <script>
+    //  Ensure public key is initialized
+    emailjs.init("8k1KpIBEiNRTTrTd2");
+
+    document.getElementById("booking-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_uvvub7u", "template_kspqktv", this)
+            emailjs.sendForm("service_uvvub7u", "template_87z7ydo", this)
+
+        .then(function (res) {
+          console.log("SUCCESS", res);
+          document.getElementById("confirmation").innerText = "✅ Booking confirmed! Email sent to passenger and cab service.";
+          document.getElementById("booking-form").reset();
+        }, function (err) {
+          console.error("FAILED", err);
+          document.getElementById("confirmation").innerText = "❌ Error: " + JSON.stringify(err.text);
+        });
+    });
+  </script>
+  <script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav-links');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

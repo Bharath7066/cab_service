@@ -1,0 +1,383 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+}
+
+
+/* Navbar */
+header {
+  background-color: #1a1a2e;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+nav h1 {
+  color: #ffd700;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+    
+  color: #f1f1f1;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+}
+/* Base Styles for Navbar (Desktop) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #002b5b;
+  padding: 1rem 2rem;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #ff8c00;
+  font-weight: bold;
+}
+
+/* Hamburger Icon */
+.menu-toggle {
+  font-size: 2rem;
+  display: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Nav Links Common */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Mobile Design with Block Boxes */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    display: none;
+    padding: 1rem 0;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li a {
+    background-color:#1a1a2e;
+    color: black;
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    border: 3px solid white;
+    font-weight: bold;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .nav-links li a:hover {
+    transform: scale(1.03);
+    background-color: #ffd700;
+    
+  }
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a2e;
+  padding: 1rem 2rem;
+  color: white;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.6rem;
+  color: #3e8ef7;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+.nav-links li a:hover {
+ 
+      
+      font-weight: 600;
+
+}
+
+.menu-toggle {
+  font-size: 2rem;
+  color: white;
+  display: none;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links li a:hover {
+ 
+      color: black;
+      font-weight: 600;
+
+}
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: #002b5b;
+    display: none;
+    padding: 1rem 0;
+    border-top: 2px solid #0a84ff;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #1a1a2e, #16213e);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero .btn {
+  padding: 0.9rem 2rem;
+  background-color: #ffd700;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #e6c200;
+  color: white;
+  
+}
+
+/* Services Section */
+.services {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  color: #1a1a2e;
+  margin-bottom: 2rem;
+}
+
+.service-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.service-boxes .box {
+  background: #f4f4f4;
+  padding: 2rem;
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-boxes .box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  background: #fefefe;
+}
+
+.service-boxes .box h3 {
+  color: #16213e;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.service-boxes .box p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Booking Section */
+.booking {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.booking h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1a1a2e;
+}
+
+form input,
+form select,
+form button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.9rem;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: #1a1a2e;
+  box-shadow: 0 0 5px rgba(26, 26, 46, 0.2);
+}
+
+form button {
+  background: #1a1a2e;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #0e0e1a;
+}
+
+/* Contact Section */
+.contact {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  color: #1a1a2e;
+}
+
+.contact p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a2e;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .service-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+}
